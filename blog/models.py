@@ -13,16 +13,12 @@ class Post(models.Model):
 	was_published_recently.admin_order_field = 'pub_date'
 	was_published_recently.boolean = True
 	was_published_recently.short_description= 'Published Recently?'
-	def get_post(self):
-		return (self.post_title, self.postcontent_set.get(self.active_revision_id));
 	
 class PostContent(models.Model):
 	post = models.ForeignKey(Post)
 	post_content = models.TextField()
 	revision_number = models.IntegerField(default=0)
 	is_active_revision = models.BooleanField(default=False)
-	
-
 	def __str__(self):
 		return 'Revision # ' + str(self.revision_number)
 			
