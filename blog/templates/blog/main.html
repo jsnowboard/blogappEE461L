@@ -1,0 +1,16 @@
+<Title>
+	Jeremiah and Eric's Blog
+</Title>
+<h1>
+	Jeremiah and Eric's Blog
+</h1>
+{% if blog_post_list %}
+    <ul>
+    {% for post in blog_post_list %}
+        <p>{{ post.post_title }}</p>
+		<p>{{ post.post_content }}</p>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No posts are available.</p>
+{% endif %}

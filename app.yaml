@@ -1,0 +1,13 @@
+application: jeremiah-and-erics-blog
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: .*
+  script: blogapp.wsgi.application
+
+libraries:
+- name: django
+  version: 1.5
